@@ -1,0 +1,11 @@
+{
+  "type": "music",
+  "domain": "filesystem_local",
+  "name": "Filesystem (local disk)",
+  "description": "Support for music files that are present on a local accessible disk/folder.",
+  "codeowners": ["@music-assistant"],
+  "requirements": [],
+  "documentation": "https://github.com/music-assistant/hass-music-assistant/discussions/820",
+  "multi_instance": true,
+  "icon": "mdi:mdi-harddisk"
+}

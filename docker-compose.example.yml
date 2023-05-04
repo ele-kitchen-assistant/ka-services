@@ -1,0 +1,18 @@
+version: "3"
+services:
+  kitchen-assistant-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/kitchen-assistant/server:latest # <<< Desired release version here
+    container_name: kitchen-assistant-server
+    restart: unless-stopped
+    # Network mode must be set to host for MA to work correctly
+    network_mode: host
+    volumes:
+      - ${USERDIR:-$HOME}/docker/kitchen-assistant-server/data:/data/
+    # privileged caps needed to mount smb folders within the container
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    privileged: true
